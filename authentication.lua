@@ -19,7 +19,7 @@ function get_user()
    divider = auth:find(':')
    local user = auth:sub(0, divider-1)
    local pass = auth:sub(divider+1)
-   if user ~= 'user' or pass ~= 'pass' then
+   if ngx.var.users[user] ~= pass
       return
    end
    
